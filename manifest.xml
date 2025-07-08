@@ -1,61 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xsi:type="MessageComposeCommandSurface">
-  <Id>f1000000-0000-0000-0000-000000000001</Id>
+           xsi:type="MailApp">
+  <Id>e7c11111-aaaa-bbbb-cccc-123456789abc</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Hans Kohler AG</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="E-Mail Vorlage"/>
-  <Description DefaultValue="Fügt eine Vorlage aus SharePoint ein."/>
+  <DisplayName DefaultValue="Template Tool"/>
+  <Description DefaultValue="Einfügen von E-Mail-Templates"/>
 
   <Hosts>
     <Host Name="Mailbox"/>
   </Hosts>
 
   <Requirements>
-    <Sets DefaultMinVersion="1.8">
+    <Sets DefaultMinVersion="1.1">
       <Set Name="Mailbox"/>
     </Sets>
   </Requirements>
 
-  <Resources>
-    <bt:Urls xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0">
-      <bt:Url id="TaskPane.Url" DefaultValue="https://nibra18.github.io/email-template-addin/pane.html"/>
-    </bt:Urls>
-  </Resources>
-
-  <ExtensionPoint xsi:type="MessageComposeCommandSurface">
-    <OfficeTab id="TabDefault">
-      <Group id="msgComposeGroup">
-        <Label resid="groupLabel" />
-        <Control xsi:type="Button" id="insertTemplateBtn">
-          <Label resid="buttonLabel"/>
-          <Supertip>
-            <Title resid="buttonLabel"/>
-            <Description resid="buttonDescription"/>
-          </Supertip>
-          <Action xsi:type="ShowTaskPane">
-            <SourceLocation resid="TaskPane.Url"/>
-            <Title resid="paneTitle"/>
-          </Action>
-        </Control>
-      </Group>
-    </OfficeTab>
-  </ExtensionPoint>
-
-  <VersionOverrides Version="1.0">
-    <Resources xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0">
-      <bt:ShortStrings>
-        <bt:String id="groupLabel" DefaultValue="Vorlage"/>
-        <bt:String id="buttonLabel" DefaultValue="Einfügen"/>
-        <bt:String id="paneTitle" DefaultValue="Vorlage wählen"/>
-      </bt:ShortStrings>
-      <bt:LongStrings>
-        <bt:String id="buttonDescription" DefaultValue="Fügt eine E-Mail-Vorlage aus SharePoint ein"/>
-      </bt:LongStrings>
-    </Resources>
-  </VersionOverrides>
+  <FormSettings>
+    <Form xsi:type="MessageCompose">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://nibra18.github.io/email-template-addin/pane.html"/>
+        <RequestedHeight>300</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
 
   <Permissions>ReadWriteItem</Permissions>
 </OfficeApp>

@@ -35,11 +35,6 @@
             <Title resid="buttonLabel"/>
             <Description resid="buttonDescription"/>
           </Supertip>
-          <Icon>
-            <bt:Image size="16" resid="icon16"/>
-            <bt:Image size="32" resid="icon32"/>
-            <bt:Image size="80" resid="icon80"/>
-          </Icon>
           <Action xsi:type="ShowTaskPane">
             <SourceLocation resid="TaskPane.Url"/>
             <Title resid="paneTitle"/>
@@ -50,12 +45,7 @@
   </ExtensionPoint>
 
   <VersionOverrides Version="1.0">
-    <Resources>
-      <bt:Images xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0">
-        <bt:Image id="icon16" DefaultValue="https://nibra18.github.io/email-template-addin/icon-16.png"/>
-        <bt:Image id="icon32" DefaultValue="https://nibra18.github.io/email-template-addin/icon-32.png"/>
-        <bt:Image id="icon80" DefaultValue="https://nibra18.github.io/email-template-addin/icon-80.png"/>
-      </bt:Images>
+    <Resources xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0">
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Vorlage"/>
         <bt:String id="buttonLabel" DefaultValue="Einfügen"/>

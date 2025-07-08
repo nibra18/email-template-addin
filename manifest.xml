@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:type="MessageComposeCommandSurface">
+  <Id>f1000000-0000-0000-0000-000000000001</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Hans Kohler AG</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="E-Mail Vorlage"/>
+  <Description DefaultValue="Fügt eine Vorlage aus SharePoint ein."/>
+
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+
+  <Requirements>
+    <Sets DefaultMinVersion="1.8">
+      <Set Name="Mailbox"/>
+    </Sets>
+  </Requirements>
+
+  <Resources>
+    <bt:Urls xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0">
+      <bt:Url id="TaskPane.Url" DefaultValue="https://nibra18.github.io/email-template-addin/pane.html"/>
+    </bt:Urls>
+  </Resources>
+
+  <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+    <OfficeTab id="TabDefault">
+      <Group id="msgComposeGroup">
+        <Label resid="groupLabel" />
+        <Control xsi:type="Button" id="insertTemplateBtn">
+          <Label resid="buttonLabel"/>
+          <Supertip>
+            <Title resid="buttonLabel"/>
+            <Description resid="buttonDescription"/>
+          </Supertip>
+          <Icon>
+            <bt:Image size="16" resid="icon16"/>
+            <bt:Image size="32" resid="icon32"/>
+            <bt:Image size="80" resid="icon80"/>
+          </Icon>
+          <Action xsi:type="ShowTaskPane">
+            <SourceLocation resid="TaskPane.Url"/>
+            <Title resid="paneTitle"/>
+          </Action>
+        </Control>
+      </Group>
+    </OfficeTab>
+  </ExtensionPoint>
+
+  <VersionOverrides Version="1.0">
+    <Resources>
+      <bt:Images xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0">
+        <bt:Image id="icon16" DefaultValue="https://nibra18.github.io/email-template-addin/icon-16.png"/>
+        <bt:Image id="icon32" DefaultValue="https://nibra18.github.io/email-template-addin/icon-32.png"/>
+        <bt:Image id="icon80" DefaultValue="https://nibra18.github.io/email-template-addin/icon-80.png"/>
+      </bt:Images>
+      <bt:ShortStrings>
+        <bt:String id="groupLabel" DefaultValue="Vorlage"/>
+        <bt:String id="buttonLabel" DefaultValue="Einfügen"/>
+        <bt:String id="paneTitle" DefaultValue="Vorlage wählen"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="buttonDescription" DefaultValue="Fügt eine E-Mail-Vorlage aus SharePoint ein"/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+
+  <Permissions>ReadWriteItem</Permissions>
+</OfficeApp>

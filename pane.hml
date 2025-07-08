@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Vorlage einfügen</title>
+    <script src="pane.js"></script>
+  </head>
+  <body>
+    <h3>Vorlage auswählen</h3>
+    <button onclick="insertTemplate('DE/template_de.html')">🇩🇪 Deutsch</button>
+    <button onclick="insertTemplate('EN/template_en.html')">🇬🇧 English</button>
+    <button onclick="insertTemplate('FR/template_fr.html')">🇫🇷 Französisch</button>
+    <button onclick="insertTemplate('IT/template_it.html')">🇮🇹 Italienisch</button>
+  </body>
+</html>
